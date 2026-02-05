@@ -1,0 +1,143 @@
+.edit-chat {
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  color: #9ca3af;
+  cursor: pointer;
+  opacity: 0;
+  transition: 
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* Mostrar só ao passar o rato */
+.chat-item:hover .edit-chat {
+  opacity: 1;
+}
+
+.edit-chat:hover {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.edit-chat:active {
+  transform: scale(0.95);
+}
+/* LISTA DE CHATS */
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ITEM DE CHAT */
+.chat-item {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.chat-btn {
+    flex: 1;
+    background: none;
+    border: none;
+
+    color: #dddddd;
+    padding: 10px 12px;
+
+    text-align: left;
+    cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item:hover {
+    background-color: #2a2a2a;
+}
+
+/* CHAT ATIVO */
+
+
+.chat-item.active .chat-btn {
+    color: white;
+}
+
+
+.chat-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition:0.2s ease;
+}
+
+.chat-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Botão do chat (se existir) */
+.chat-btn {
+  background: none;
+  border: none;
+  color: #e5e7eb; /* cinza claro */
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+}
+
+/* Botão apagar */
+.delete-chat {
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  color: #9ca3af;
+  cursor: pointer;
+  opacity: 0;
+  transition: 
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* Mostrar ao passar o rato */
+.chat-item:hover .delete-chat {
+  opacity: 1;
+}
+
+.delete-chat:hover {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  transform: scale(1.05);
+}
+
+.delete-chat:active {
+  transform: scale(0.95);
+}
+
+
+.chat-rename-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  padding: 2px 4px;
+}
+.chat-title {
+  cursor: text;
+}
