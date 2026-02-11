@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="CSS/listachats.css">
     <link rel="stylesheet" href="CSS/config.css">
 
-    <script src="JS/Scripts.js" defer></script>
     <script src="JS/listachat.js" defer></script>
+    <script src="JS/APImensagens.js" defer></script>
     <script src="JS/config.js" defer></script>
+    <script src="JS/Scripts.js" defer></script>
+    
 </head>
 <body>
 
@@ -26,19 +28,19 @@
             <span></span>
             <span></span>
         </div>
-        
-        <div class="chat-area" id="chatArea"></div>
+<div class="chat-area" id="chatBox"></div>
 
-        <div class="chat-input-container">
-            <input
-                type="text"
-                id="chatInput"
-                class="chat-input"
-                placeholder="Escreve a tua mensagem..."
-                onkeydown="if(event.key==='Enter') enviarMensagem()"
-            >
-            <button class="send-button" onclick="enviarMensagem()">▶</button>
-        </div>
+<div class="chat-input-container">
+    <input 
+        type="text" 
+        id="chatInput" 
+        class="chat-input" 
+        placeholder="Escreve a tua mensagem..."
+    />
+    <button class="send-button" onclick="sendMessage()">➤</button>
+</div>
+
+
     </main>
 
     <nav id="side-menu" class="side-menu">
