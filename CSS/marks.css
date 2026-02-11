@@ -1,0 +1,105 @@
+/* =========================
+   Spoilers
+========================= */
+.spoiler {
+    background-color: var(--text-main);
+    color: var(--text-main);
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 0 2px;
+    transition: color 0.2s ease;
+}
+
+.spoiler.revealed {
+    color: var(--text-muted);
+}
+
+/* =========================
+   Mensagens
+========================= */
+.chat-message {
+    background-color: var(--bg-element);
+    padding: 8px 12px;
+    margin: 8px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+    line-height: 1.6;           /* 🔑 leitura */
+}
+
+/* Diferencia usuário de bot */
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #4b4b4b;
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+    background-color: #2a2a2a;
+}
+
+/* =========================
+   Markdown básico
+========================= */
+.chat-message p {
+    margin: 0.5em 0;
+}
+
+.chat-message ul,
+.chat-message ol {
+    padding-left: 1.2em;
+    margin: 0.5em 0;
+}
+
+.chat-message li {
+    margin: 0.25em 0;
+}
+
+.chat-message h1,
+.chat-message h2,
+.chat-message h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+.chat-message h2 {
+    font-size: 1.2em;
+}
+
+/* =========================
+   Tabelas Markdown
+========================= */
+.chat-message table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+.chat-message th,
+.chat-message td {
+    border: 1px solid #444;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.chat-message th {
+    background-color: #1f1f1f;
+    font-weight: bold;
+}
+
+.chat-message tr:nth-child(even) {
+    background-color: #2f2f2f;
+}
+
+/* =========================
+   Container do chat
+========================= */
+#chatBox {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
