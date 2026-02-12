@@ -1,3 +1,5 @@
+console.log("Enviando modelo:", "mistralai/mistral-7b-instruct:free");
+
 async function sendMessage() {
     const input = document.getElementById("chatInput");
     const text = input.value.trim();
@@ -31,8 +33,7 @@ async function sendMessage() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // 🔥 Modelo FREE funcional
-                model: "mistralai/mistral-7b-instruct:free",
+                model: "arcee-ai/trinity-large-preview:free",
                 messages: chatMessages[activeChatId]
             })
         });
