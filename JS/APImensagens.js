@@ -26,12 +26,12 @@ async function sendMessage() {
             method: "POST",
             headers: {
                 "Authorization": "Bearer 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",
-                "HTTP-Referer": "http://localhost:5500",
+                "HTTP-Referer": "http://127.0.0.1:5500",
                 "X-Title": "Chat Gromu",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "openrouter/aurora-alpha",
+                model: "openai/gpt-oss-120b:free",
                 messages: chatMessages[activeChatId] // só mensagens reais
             })
         });
