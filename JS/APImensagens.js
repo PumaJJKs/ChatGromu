@@ -31,29 +31,48 @@ async function sendMessage() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "stepfun/step-3.5-flash:free",
-                messages: chatMessages[activeChatId] // só mensagens reais
+                // 🔥 Modelo FREE funcional
+                model: "mistralai/mistral-7b-instruct:free",
+                messages: chatMessages[activeChatId]
             })
         });
 
         const data = await response.json();
         typingDiv.remove();
 
-        if (data.choices && data.choices[0]) {
+        // 🔎 Se a resposta não for OK
+        if (!response.ok) {
+            throw new Error(data.error?.message || "Erro na OpenRouter");
+        }
+
+        // ✅ Se veio resposta válida
+        if (data.choices && data.choices.length > 0) {
             const botReply = data.choices[0].message.content;
-            chatMessages[activeChatId].push({ role: "assistant", content: botReply });
+
+            chatMessages[activeChatId].push({
+                role: "assistant",
+                content: botReply
+            });
+
             renderMessages();
         } else {
-            throw new Error(data.error?.message || "Erro desconhecido na API");
+            throw new Error("Resposta inválida da API");
         }
 
     } catch (error) {
-        typingDiv.remove();
+        typingDiv?.remove();
+
         console.error("Erro no envio:", error);
-        chatMessages[activeChatId].push({ role: "assistant", content: `⚠️ Erro: ${error.message}` });
+
+        chatMessages[activeChatId].push({
+            role: "assistant",
+            content: `⚠️ Erro: ${error.message}`
+        });
+
         renderMessages();
     }
 }
+
 
 
 function renderMessages() {
