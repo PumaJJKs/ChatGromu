@@ -31,7 +31,7 @@ async function sendMessage() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "openrouter/openai/gpt-3.5-turbo",
+                model: "stepfun/step-3.5-flash:free",
                 messages: chatMessages[activeChatId] // só mensagens reais
             })
         });
