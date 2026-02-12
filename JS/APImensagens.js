@@ -1,5 +1,4 @@
-console.log("Enviando modelo:", "mistralai/mistral-7b-instruct:free");
-
+import { renderFormattedMessage } from './markers.js';
 async function sendMessage() {
     const input = document.getElementById("chatInput");
     const text = input.value.trim();
