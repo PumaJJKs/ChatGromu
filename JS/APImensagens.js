@@ -1,4 +1,4 @@
-import { renderFormattedMessage } from './markers.js';
+import { renderMessage } from './markers.js';
 async function sendMessage() {
     const input = document.getElementById("chatInput");
     const text = input.value.trim();
@@ -91,3 +91,4 @@ function renderMessages() {
 
     box.scrollTop = box.scrollHeight;
 }
+window.sendMessage = sendMessage

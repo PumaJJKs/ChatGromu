@@ -6,10 +6,12 @@ marked.setOptions({
     gfm: true
 });
 
+// Converte spoilers ||texto|| em HTML
 function parseSpoilers(text) {
     return text.replace(/\|\|(.*?)\|\|/g, '<span class="spoiler">$1</span>');
 }
 
+// Normaliza Markdown mal formatado da API
 function normalizeMarkdown(text) {
     return text
         .replace(/\s*(#{1,6})\s*/g, '\n\n$1 ')
@@ -22,24 +24,31 @@ function normalizeMarkdown(text) {
         .trim();
 }
 
-// Adicionamos EXPORT para que o APImensagens possa usar esta função
-export function renderFormattedMessage(messageText, sender = "user") {
+// MUDANÇA: Adicionamos "export" para que o APImensagens.js consiga importar esta função
+export function renderMessage(messageText, sender = "user") {
     const chatBox = document.getElementById("chatBox");
+    if (!chatBox) return; // Evita erro se o chatBox não existir
 
-    // Limpa o markdown da API
-    const cleanText = normalizeMarkdown(messageText);
+    // 🔧 normalização ANTES do marked
+    messageText = normalizeMarkdown(messageText);
 
-    // Converte para HTML
-    let html = marked.parse(cleanText);
+    let html = marked.parse(messageText);
     html = parseSpoilers(html);
 
     const messageEl = document.createElement("div");
-    messageEl.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+    
+    // MUDANÇA: Ajustei as classes para 'message' + 'user-message'/'bot-message' 
+    // para bater com o CSS que você mostrou nos prints anteriores
+    const senderClass = sender === "user" ? "user-message" : "bot-message";
+    messageEl.classList.add("message", senderClass);
+    
     messageEl.innerHTML = html;
 
-    // Ativa spoilers
+    // Ativa spoilers clicáveis
     messageEl.querySelectorAll('.spoiler').forEach(el => {
-        el.addEventListener('click', () => el.classList.toggle('revealed'));
+        el.addEventListener('click', () => {
+            el.classList.toggle('revealed');
+        });
     });
 
     chatBox.appendChild(messageEl);
