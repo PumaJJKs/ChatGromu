@@ -1,96 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Gromu</title>
-   <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/messagebar.css">
-    <link rel="stylesheet" href="CSS/listachats.css">
-    <link rel="stylesheet" href="CSS/config.css">
-    <link rel="stylesheet" href="CSS/marks.css">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Gromu</title>
+    <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/messagebar.css">
+        <link rel="stylesheet" href="CSS/listachats.css">
+        <link rel="stylesheet" href="CSS/config.css">
+        <link rel="stylesheet" href="CSS/marks.css">
 
-    <script src="JS/listachat.js" defer></script>
-    <script src="JS/APImensagens.js" defer></script>
-    <script src="JS/config.js" defer></script>
-    <script src="JS/Scripts.js" defer></script>
-    <script src="JS/markers.js" defer></script>
+        <script src="JS/Scripts.js" defer></script>
+        <script src="JS/listachat.js" defer></script>
+        <script src="JS/config.js" defer></script>
+        <script src="JS/APImensagens.js" defer></script>
+        <script src="JS/markers.js" defer></script>
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <main id="main-content">
-        <header class="app-header">
-            <span class="header-title">Chat Gromu</span>
-            <img src="Mídias/ChatGromu.png" alt="ChatGromu logo" class="header-logo">
-        </header>
+        <main id="main-content">
+            <header class="app-header">
+                <span class="header-title">Chat Gromu</span>
+                <img src="Mídias/ChatGromu.png" alt="ChatGromu logo" class="header-logo">
+            </header>
 
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-<div class="chat-area" id="chatBox"></div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    <div class="chat-area" id="chatBox"></div>
 
-<div class="chat-input-container">
-    <input 
-        type="text" 
-        id="chatInput" 
-        class="chat-input" 
-        placeholder="Escreve a tua mensagem..."
-    />
-    <button class="send-button" onclick="sendMessage()">➤</button>
-</div>
-
-
-    </main>
-
-    <nav id="side-menu" class="side-menu">
-        <div class="side-menu-header">
-            <button id="settingsBtn" class="settings-btn">
-        ⚙️ Configurações
-    </button>
-            <button class="close-button" onclick="toggleMenu()">×</button>
-            <button class="novochat-button" onclick="createNewChat()">Novo chat</button>
-        </div>
-        <div class="chat-list" id="chatList"></div>
-    </nav>
-
-    <div id="settingsPanel" class="settings-panel hidden">
-    <div class="settings-header">
-        <h2>Configurações</h2>
-        <button class="settings-close" onclick="closeSettings()">×</button>
+    <div class="chat-input-container">
+        <input 
+            type="text" 
+            id="chatInput" 
+            class="chat-input" 
+            placeholder="Escreve a tua mensagem..."
+        />
+        <button class="send-button" onclick="sendMessage()">➤</button>
     </div>
 
-    <div class="settings-section">
-        <button class="settings-action">Entrar na conta</button>
-        <button class="settings-action secondary">Criar conta</button>
-    </div>
 
-    <div class="settings-section">
-        <label>Idioma</label>
-        <select id="languageSelect">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-        </select>
-    </div>
+        </main>
 
-    <div class="settings-section">
-        <label>Aparência</label>
-        <button class="settings-action" id="themeToggle">
-            🌙 Modo escuro
+        <nav id="side-menu" class="side-menu">
+            <div class="side-menu-header">
+                <button id="settingsBtn" class="settings-btn">
+            ⚙️ Configurações
         </button>
+                <button class="close-button" onclick="toggleMenu()">×</button>
+                <button class="novochat-button" onclick="createNewChat()">Novo chat</button>
+            </div>
+            <div class="chat-list" id="chatList"></div>
+        </nav>
+
+        <div id="settingsPanel" class="settings-panel hidden">
+        <div class="settings-header">
+            <h2>Configurações</h2>
+            <button class="settings-close" onclick="closeSettings()">×</button>
+        </div>
+
+        <div class="settings-section">
+            <button class="settings-action">Entrar na conta</button>
+            <button class="settings-action secondary">Criar conta</button>
+        </div>
+
+        <div class="settings-section">
+            <label>Idioma</label>
+            <select id="languageSelect">
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+
+        <div class="settings-section">
+            <label>Aparência</label>
+            <button class="settings-action" id="themeToggle">
+                🌙 Modo escuro
+            </button>
+        </div>
+
+        <div class="settings-section">
+            <button class="settings-action danger" onclick="logout()">
+                🚪 Sair da conta
+            </button>
+        </div>
     </div>
 
-    <div class="settings-section">
-        <button class="settings-action danger" onclick="logout()">
-            🚪 Sair da conta
-        </button>
-    </div>
-</div>
 
 
-
-</body>
-</html>
+    </body>
+    </html>
