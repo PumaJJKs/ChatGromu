@@ -26,7 +26,7 @@ async function sendMessage() {
         const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
             method: "POST",
             headers: {
-                "Authorization": "Bearer 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",
+                "Authorization": "Bearer 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",
                 "HTTP-Referer": "https://pumajjks.github.io/ChatGromu/",
                 "X-Title": "Chat Gromu",
                 "Content-Type": "application/json"
